@@ -4,7 +4,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var todos = require('./routes/todos');
 var cloud = require('./cloud');
-
+var bugsnag = require("bugsnag");
+bugsnag.register("3167e1aa5dac8886257543b8a71f195f");
 //parser manager
 var ParserManager = require('./parser_hub/parser_manager');
 
@@ -25,9 +26,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 //});
 app.use(cookieParser());
 
-//app.get('/', function (req, res) {
-//    res.render('index', {currentTime: new Date()})
-//})
+app.get('/status', function (req, res) {
+    res.send('The server is running');
+});
 
 app.post('/:service_name', function (req, res) {
     //console.log(req);
