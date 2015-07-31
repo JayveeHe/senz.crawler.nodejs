@@ -8,6 +8,8 @@ var QIHU = require('./parsers/qihu360');
 var WANDOUJIA = require("./parsers/wandoujia");
 var GOOGLEPLAY = require('./parsers/googleplay');
 var KR36 = require('./parsers/kr36next');
+var DbCity = require('./parsers/dbcity');
+var Damai = require('./parsers/damai');
 
 var ERRORS = require('./status_code').ERRORS;
 var Q = require('q');
@@ -76,6 +78,22 @@ exports.ParseURL = function (service_name, url) {
             }, function (err) {
                 deferred.reject(err);
                 //return err;
+            });
+            break;
+        case "act.damai":
+            Damai.do(url).then(function (data) {
+                result = data;
+                deferred.resolve(data);
+            }, function (err) {
+                deferred.reject(err);
+            });
+            break;
+        case "act.dbcity":
+            DbCity.do(url).then(function (data) {
+                result = data;
+                deferred.resolve(data);
+            }, function (err) {
+                deferred.reject(err);
             });
             break;
         default :

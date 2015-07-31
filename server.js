@@ -1,12 +1,12 @@
 var AV = require('leanengine');
 //var token_config = require('./config/token_config');
 
-var APP_ID = process.env.LC_APP_ID;
-var APP_KEY = process.env.LC_APP_KEY;
-var MASTER_KEY = process.env.LC_APP_MASTER_KEY;
-//var APP_ID = token_config.LC_APPID;
-//var APP_KEY = token_config.LC_APPKEY;
-//var MASTER_KEY = token_config.LC_MASTER_KEY;
+//var APP_ID = process.env.LC_APP_ID;
+//var APP_KEY = process.env.LC_APP_KEY;
+//var MASTER_KEY = process.env.LC_APP_MASTER_KEY;
+var APP_ID = 'h7hukju9tphinijtszrpfk939im8b5br1mwpm7jejxpnusjm';
+var APP_KEY = 'xtofbaro5h1m933exesvqw5lvxfl8qwpn1kr5fpb8m1usmnb';
+var MASTER_KEY = 'ztt4ikjzckrkgczxlvp1hboz6zgzz78aivfy3b73u7pjhuqc';
 
 AV.initialize(APP_ID, APP_KEY, MASTER_KEY);
 // 如果不希望使用 masterKey 权限，可以将下面一行删除

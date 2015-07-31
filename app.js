@@ -9,6 +9,9 @@ bugsnag.register("3167e1aa5dac8886257543b8a71f195f");
 //parser manager
 var ParserManager = require('./parser_hub/parser_manager');
 
+//var url  ='http://item.damai.cn/84046.html';
+//var tt= url.match(new RegExp('([0-9]+)'));
+//console.log(tt[0]);
 var app = express();
 
 // 设置 view 引擎
@@ -51,7 +54,9 @@ app.post('/:service_name', function (req, res) {
         })
 
     });
-})
+});
+
+
 
 // 可以将一类的路由单独保存在一个文件中
 //app.use('/todos', todos);
