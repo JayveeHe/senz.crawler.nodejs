@@ -39,7 +39,7 @@ exports.getJSON = function (options) {
 };
 
 exports.postJSON = function (options) {
-    var deferred = Q.defer()
+    var deferred = Q.defer();
     var req = unirest.post(options.url)
         .query(_.extend({}, options.query))
         .header(_.extend(
